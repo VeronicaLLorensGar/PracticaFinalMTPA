@@ -16,7 +16,7 @@ import java.net.Socket;
  */
 public class Connection
         extends Thread {
-
+    public static EstadoServidor estado; //esto nose
     DataInputStream in;
     DataOutputStream out;
     Socket clientSocket;
@@ -48,7 +48,9 @@ public class Connection
         } finally {
             try {
                 clientSocket.close();
-            } catch (IOException e) {/*close failed*/
+                //esto es un poco pocho, no me gusta
+                estado.registrarDesconexion();
+            } catch (IOException e) {
             }
         }
 

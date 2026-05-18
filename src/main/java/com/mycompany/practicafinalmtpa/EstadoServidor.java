@@ -8,7 +8,21 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-//de esta clase no estoy muy segura
+
 public class EstadoServidor {
-    
+
+    public static int clientesConectados;
+
+    public static int getClientesConectados() {
+        return clientesConectados;
+    }
+
+    public void registrarConexion() {
+        clientesConectados++;
+    }
+
+    public void registrarDesconexion() {
+        clientesConectados--;
+    }
+
 }
