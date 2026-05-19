@@ -27,7 +27,7 @@ public class Servidor {
                     Connection c = new Connection(clientSocket);
                     estado.registrarConexion();
                 }else{
-                    //lamar a una clase que el cliente que se quiera conectar mande un mensaje de q no se puede una notify
+                    //llamar a una clase que el cliente que se quiera conectar mande un mensaje de q no se puede una notify
                     //hay que hacer aqui lo de cortar la conexion cliente/servidor para hacer mantenimiento
                 }
             }
@@ -36,11 +36,22 @@ public class Servidor {
         }
     }
     //metodo de la gestion del mantenimiento
-    public static void mantenimiento(){
+    public static void gestionMantenimiento(){
+    if(empezarMantenimiento){
+    serverSocket.close();
     
+    }}
     
+    public static void acabarMantenimiento(){
+    if(mantenimiento){
+        
+    }
+    }
+    
+    public static void iniciarMantenimiento(){
     
     }
+    
     /*posibles opciones
     
     mantenimiento es un metodo? un boolean? o ambas
