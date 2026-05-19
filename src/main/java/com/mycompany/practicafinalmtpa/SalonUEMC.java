@@ -8,6 +8,18 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-public class SalonUEMC extends Salon{
-    
+public class SalonUEMC extends Salon {
+
+    public static SalonUEMC instancia;
+
+    private SalonUEMC() {
+    }
+
+    public static SalonUEMC getInstancia() {
+        if (instancia == null) {
+            instancia = new SalonUEMC();
+        }
+        return instancia;
+    }
+
 }
