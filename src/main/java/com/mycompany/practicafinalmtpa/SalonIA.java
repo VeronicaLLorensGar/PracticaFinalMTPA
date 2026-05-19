@@ -8,6 +8,18 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-public class SalonIA extends Salon{
-    
+public class SalonIA extends Salon {
+
+    public static SalonIA instancia;
+
+    private SalonIA() {
+    }
+
+    public static SalonIA getInstancia() {
+        if (instancia == null) {
+            instancia = new SalonIA();
+        }
+        return instancia;
+    }
+
 }

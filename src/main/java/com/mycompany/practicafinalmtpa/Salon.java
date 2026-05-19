@@ -4,6 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Veronica
@@ -13,6 +15,19 @@ package com.mycompany.practicafinalmtpa;
 //y es el mismo servidor quien se lo manda a los clientes conectados, o esto son clientes o hilos nose
 //pone q todo tiene q ser comunicacion servidor pero nose
 public abstract class Salon {
-    //tienen q tener una variable para ver cuantos clientes estan conectados  acada uno de ellos o algo
+    
+    public int usuariosConectados;//iigual ni hace falta con el size de la lista
+    public String nombre;
+    public ArrayList<Usuario>() = new ArrayList<>();
+    
+    public GestorSalones gc = new GestorSalones();
+
+    public int getClientesConectados() {
+        return usuariosConectados;
+    }
+    
+    
+    
+    
     
 }

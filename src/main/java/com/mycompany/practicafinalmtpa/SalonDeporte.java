@@ -9,5 +9,16 @@ package com.mycompany.practicafinalmtpa;
  * @author Veronica
  */
 public class SalonDeporte extends Salon{
+    public static SalonDeporte instancia;
+
+    private SalonDeporte() {}
+
+    public static SalonDeporte getInstancia() {
+        if (instancia == null) {
+            instancia = new SalonDeporte();
+        }
+        return instancia;
+    }
+
     
 }
