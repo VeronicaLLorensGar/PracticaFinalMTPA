@@ -36,11 +36,13 @@ public class Connection
         try {
 
             String protocolo = in.readUTF();
+            enviarMensaje();
             //añadido por mi
             ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
             pm.separarComando(protocolo);
+            
 
-            out.writeUTF("de momento nada");
+            
         } catch (EOFException e) {
             System.out.println("EOF:" + e.getMessage());
         } catch (IOException e) {
@@ -54,6 +56,9 @@ public class Connection
             }
         }
 
+    }
+    public void enviarMensaje() throws IOException{
+        out.writeUTF(" ");
     }
 
 }
