@@ -14,10 +14,9 @@ import java.util.ArrayList;
 public abstract class Salon {
 
     public String nombre;
-
     public ArrayList<Usuario> listaUsuario = new ArrayList <>  ();
-
     public static GestorSalones gc = new GestorSalones();
+    public int numMensajes; 
 
     public int getClientesConectados() {
         return listaUsuario.size();
@@ -31,5 +30,14 @@ public abstract class Salon {
         listaUsuario.add(user);
 
     }
+    
+    public int getMensajes() {
+        return numMensajes;
+    }
 
+    public void incrementarMensajes() {
+        numMensajes++;
+    
+
+    }
 }
