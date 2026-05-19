@@ -8,25 +8,21 @@ import java.io.*;
 import java.net.*;
 
 public class Servidor {
-  
-  
-    
-
 
     public static void iniciacionServidor() {
-        EstadoServidor estado= EstadoServidor.getEstado();
-        
+        EstadoServidor estado = EstadoServidor.getEstado();
+
         try {
             int serverPort = 7896;
             ServerSocket listenSocket = new ServerSocket(serverPort);
             //lo de los clientes conectados habra que cambiarlo luego opq cuando cuando se va uno hay q manjearlo
-            
+
             while (true) {
                 if (estado.aceptarClientes()) {
                     Socket clientSocket = listenSocket.accept();
                     Connection c = new Connection(clientSocket);
                     estado.registrarConexion();
-                }else{
+                } else {
                     //llamar a una clase que el cliente que se quiera conectar mande un mensaje de q no se puede una notify
                     //hay que hacer aqui lo de cortar la conexion cliente/servidor para hacer mantenimiento
                 }
@@ -35,23 +31,25 @@ public class Servidor {
             System.out.println("Listen socket:" + e.getMessage());
         }
     }
+
     //metodo de la gestion del mantenimiento
-    public static void gestionMantenimiento(){
-    if(empezarMantenimiento){
-    serverSocket.close();
-    
-    }}
-    
-    public static void acabarMantenimiento(){
-    if(mantenimiento){
-        
+    public static void gestionMantenimiento() {
+        if (empezarMantenimiento) {
+            serverSocket.close();
+
+        }
     }
+
+    public static void acabarMantenimiento() {
+        if (mantenimiento) {
+
+        }
     }
-    
-    public static void iniciarMantenimiento(){
-    
+
+    public static void iniciarMantenimiento() {
+
     }
-    
+
     /*posibles opciones
     
     mantenimiento es un metodo? un boolean? o ambas
@@ -62,7 +60,5 @@ public class Servidor {
     private void CerrarCliente(){}
     interrumpirCliente(){}
     
-    */
+     */
 }
-
-
