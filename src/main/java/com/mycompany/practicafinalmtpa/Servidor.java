@@ -8,21 +8,21 @@ import java.io.*;
 import java.net.*;
 
 public class Servidor {
-
-    public static int MAX_CLIENTES = 20;
   
-    public static EstadoServidor estado;
+  
     
 
 
     public static void iniciacionServidor() {
+        EstadoServidor estado= EstadoServidor.getEstado();
+        
         try {
             int serverPort = 7896;
             ServerSocket listenSocket = new ServerSocket(serverPort);
             //lo de los clientes conectados habra que cambiarlo luego opq cuando cuando se va uno hay q manjearlo
             
             while (true) {
-                if (estado.getClientesConectados()!= MAX_CLIENTES) {
+                if (estado.aceptarClientes()) {
                     Socket clientSocket = listenSocket.accept();
                     Connection c = new Connection(clientSocket);
                     estado.registrarConexion();

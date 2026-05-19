@@ -16,11 +16,11 @@ import java.net.Socket;
  */
 public class Connection
         extends Thread {
-    public static EstadoServidor estado; //esto nose
+    
     DataInputStream in;
     DataOutputStream out;
     Socket clientSocket;
-
+    EstadoServidor estado = EstadoServidor.getEstado();
     public Connection(Socket aClientSocket) {
         try {
             clientSocket = aClientSocket;
@@ -35,12 +35,12 @@ public class Connection
     public void run() {
         try {
 
-            String data = in.readUTF();
+            String protocolo = in.readUTF();
             //añadido por mi
             ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
-            pm.separarComando(data);
+            pm.separarComando(protocolo);
 
-            out.writeUTF(data);
+            out.writeUTF("de momento nada");
         } catch (EOFException e) {
             System.out.println("EOF:" + e.getMessage());
         } catch (IOException e) {
