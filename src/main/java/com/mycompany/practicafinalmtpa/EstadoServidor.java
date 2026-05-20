@@ -8,7 +8,7 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-//singleton aqui aunq nose todavia
+
 public class EstadoServidor {
 
     private boolean mantenimiento = false;
@@ -27,7 +27,7 @@ public class EstadoServidor {
         return estado;
     }
 
-    private int clientesConectados = 0;//no estaba inicializado, lo inicializo a 0
+    private int clientesConectados = 0;
 
     public int getClientesConectados() {
         return clientesConectados;
@@ -42,7 +42,7 @@ public class EstadoServidor {
     }
     
 
-    public boolean aceptarClientes() { //tambien cambio la implementacion de este metodo y le añado algo nuevo
+    public boolean aceptarClientes() { 
         if (mantenimiento) {
             return false;
         }

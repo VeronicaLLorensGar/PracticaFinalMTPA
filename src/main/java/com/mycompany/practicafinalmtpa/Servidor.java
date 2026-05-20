@@ -17,7 +17,7 @@ public class Servidor {
         try {
             int serverPort = 7896;
             ServerSocket listenSocket = new ServerSocket(serverPort);
-            //lo de los clientes conectados habra que cambiarlo luego opq cuando cuando se va uno hay q manjearlo
+            
 
             while (true) {
                 if (estado.aceptarClientes()) {
@@ -34,17 +34,6 @@ public class Servidor {
             System.out.println("Listen socket:" + e.getMessage());
         }
     }
-//esto habra q quitarlo pero lo dejo pq ns q has puesto aqui ajajjaja
-//    public static void cerrarConexionesActivas() {
-//        ArrayList<Socket> lista = Servidor.getConexionesActivas();
-//        for (int i = 0; i < lista.size(); i++) {
-//            Socket s = lista.get(i);
-//            try {
-//                s.close();
-//            } catch (IOException e) {}
-//        }
-//        conexionesActivas = new ArrayList<>();
-//
-//    }
+
 
 }
