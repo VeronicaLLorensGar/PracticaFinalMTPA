@@ -6,8 +6,15 @@ package com.mycompany.practicafinalmtpa;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 
 public class Servidor {
+
+    private static ArrayList<Socket> conexionesActivas = new ArrayList<>();
+
+    public static ArrayList<Socket> getConexionesActivas() {
+        return conexionesActivas;
+    }
 
     public static void iniciacionServidor() {
         EstadoServidor estado = EstadoServidor.getEstado();
@@ -20,6 +27,7 @@ public class Servidor {
             while (true) {
                 if (estado.aceptarClientes()) {
                     Socket clientSocket = listenSocket.accept();
+                    conexionesActivas.add(clientSocket);//nuevo para poder saber las conexiones activas que tenemos a la hora del mantenimiento
                     Connection c = new Connection(clientSocket);
                     estado.registrarConexion();
                 } else {
@@ -32,24 +40,17 @@ public class Servidor {
         }
     }
 
-    //metodo de la gestion del mantenimiento
-    public static void gestionMantenimiento() {
-        if (empezarMantenimiento) {
-            serverSocket.close();
-
+    public static void cerrarConexionesActivas() {
+        ArrayList<Socket> lista = Servidor.getConexionesActivas();
+        for (int i = 0; i < lista.size(); i++) {
+            Socket s = lista.get(i);
+            try {
+                s.close();
+            } catch (IOException e) {}
         }
-    }
-
-    public static void acabarMantenimiento() {
-        if (mantenimiento) {
-
-        }
-    }
-
-    public static void iniciarMantenimiento() {
+        conexionesActivas = new ArrayList<>();
 
     }
-
     /*posibles opciones
     
     mantenimiento es un metodo? un boolean? o ambas

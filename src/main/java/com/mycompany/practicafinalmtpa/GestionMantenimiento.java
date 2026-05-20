@@ -4,32 +4,37 @@
  */
 package com.mycompany.practicafinalmtpa;
 
+import java.io.IOException;
+import java.net.Socket;
+import java.util.ArrayList;
+
 /**
  *
  * @author Veronica
  */
-public class GestionMantenimiento {
-    private static volatile boolean mantenimiento=false; //hay que mirar si usar volatile, todos los hilos ven siempre el valor mas reciente de mantenimiento? si no uso volatile el sistema tendria un comportamiento determinista (no se sabe cuando va a funcionar y cuando no)
-    //yo diria de meter aqui toodo lo de mantenimiento
-        //metodo de la gestion del mantenimiento
-
-    private static void acabarMantenimiento() {
-        mantenimiento= false;
+public class GestionMantenimiento {    
+    //nuevo
+    private static GestionMantenimiento instancia;
+    private EstadoServidor estado = EstadoServidor.getEstado();
+    
+    private GestionMantenimiento (){}
+    
+    public static GestionMantenimiento getGestionMantenimiento(){
+    if(instancia ==null){
+    instancia= new GestionMantenimiento();
+    }
+    return instancia;
+    }
+    
+    public void acabarMantenimiento() {
+        estado.setMantenimiento(false);
     }
 
-    private static void iniciarMantenimiento() {
-        mantenimiento=true;
+    public void iniciarMantenimiento() {
+        estado.setMantenimiento(true);
+        Servidor.cerrarConexionesActivas();
+        estado.resetearClientes();
     }
+    
 
-    /*posibles opciones
-    
-    mantenimiento es un metodo? un boolean? o ambas
-    private void CerrarServidor(){
-    
-    
-    }
-    private void CerrarCliente(){}
-    interrumpirCliente(){}
-    
-     */
 }

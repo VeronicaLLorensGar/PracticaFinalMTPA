@@ -11,6 +11,7 @@ package com.mycompany.practicafinalmtpa;
 //singleton aqui aunq nose todavia
 public class EstadoServidor {
 
+    private boolean mantenimiento = false;
     public static int MAX_CLIENTES = 20;
 
     public static EstadoServidor estado;
@@ -26,7 +27,7 @@ public class EstadoServidor {
         return estado;
     }
 
-    public int clientesConectados;
+    private int clientesConectados = 0;//no estaba inicializado, lo inicializo a 0
 
     public int getClientesConectados() {
         return clientesConectados;
@@ -39,12 +40,33 @@ public class EstadoServidor {
     public void registrarDesconexion() {
         clientesConectados--;
     }
-
-    public boolean aceptarClientes() {
+    
+    public void resetearClientes(){
+    clientesConectados=0;
+    }
+    /*
+    public boolean aceptarClientes() { //implementacion vieja, la dejo por si quieres ver los cambios de antes a ahora, es lo mismo pero con otra funcionalidad nueva
         if (clientesConectados < MAX_CLIENTES) {
             return true;
         }
         return false;
+    }
+     */
+    public boolean aceptarClientes() { //tambien cambio la implementacion de este metodo y le añado algo nuevo
+        if (mantenimiento) {
+            return false;
+        }
+        return (clientesConectados < MAX_CLIENTES);
+    }
+
+    //nuevas implementaciones
+    public boolean getMantenimiento() {
+        return mantenimiento;
+    }
+
+    public void setMantenimiento(boolean mantenimiento) {
+        this.mantenimiento = mantenimiento;
 
     }
+
 }
