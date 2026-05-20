@@ -41,17 +41,7 @@ public class EstadoServidor {
         clientesConectados--;
     }
     
-    public void resetearClientes(){
-    clientesConectados=0;
-    }
-    /*
-    public boolean aceptarClientes() { //implementacion vieja, la dejo por si quieres ver los cambios de antes a ahora, es lo mismo pero con otra funcionalidad nueva
-        if (clientesConectados < MAX_CLIENTES) {
-            return true;
-        }
-        return false;
-    }
-     */
+
     public boolean aceptarClientes() { //tambien cambio la implementacion de este metodo y le añado algo nuevo
         if (mantenimiento) {
             return false;
@@ -59,14 +49,12 @@ public class EstadoServidor {
         return (clientesConectados < MAX_CLIENTES);
     }
 
-    //nuevas implementaciones
-    public boolean getMantenimiento() {
-        return mantenimiento;
+        public void acabarMantenimiento() {
+        mantenimiento = false;
     }
 
-    public void setMantenimiento(boolean mantenimiento) {
-        this.mantenimiento = mantenimiento;
-
+    public void iniciarMantenimiento() {
+        mantenimiento = true;
     }
 
 }
