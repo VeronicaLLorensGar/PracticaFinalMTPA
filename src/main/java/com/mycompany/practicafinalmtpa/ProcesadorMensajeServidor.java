@@ -9,7 +9,7 @@ package com.mycompany.practicafinalmtpa;
  * @author Veronica
  */
 public class ProcesadorMensajeServidor {
-    String [] parte;    //esta clase simplemente separara el mensaje del comando
+    String [] parte;  
     
     
     //la vdd esq esto no es muy principio open-closed pq si se cambia el protocolo o se añade loq sea hay q cambiarlo asi q esto es temporal

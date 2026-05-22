@@ -20,14 +20,15 @@ public class Servidor {
             
 
             while (true) {
+                Socket clientSocket = listenSocket.accept();
+                
                 if (estado.aceptarClientes()) {
-                    Socket clientSocket = listenSocket.accept();
-                   
                     Connection c = new Connection(clientSocket);
                     estado.registrarConexion();
                 } else {
                     //llamar a una clase que el cliente que se quiera conectar mande un mensaje de q no se puede una notify
-                    //hay que hacer aqui lo de cortar la conexion cliente/servidor para hacer mantenimiento
+                   
+                    clientSocket.close();
                 }
             }
         } catch (IOException e) {

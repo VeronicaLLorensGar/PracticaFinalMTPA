@@ -34,10 +34,10 @@ public class Connection
 
     public void run() {
         try {
-
+            //aqui hay q poner un while o algo pq si no se recibe y se envia un mensaje y se cierrra, pero ahora mismo nose
             String protocolo = in.readUTF();
             enviarMensaje();
-            //añadido por mi
+            
             ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
             pm.separarComando(protocolo);
             
@@ -61,7 +61,7 @@ public class Connection
         out.writeUTF("");//revisar cuando hagamos la clase de generar respuestas y el argumento con la respuesta a enviar
     }
     
-    //diferenciamos ambos tipos de mensajes por el formato desconocido
+    //diferenciamos ambos tipos de mensajes por el formato desconocido no sabemos de momento
    /* public void enviarRespuesta(respuesta)throws IOException{
     out.writeUTF(respuesta);
     }*/
