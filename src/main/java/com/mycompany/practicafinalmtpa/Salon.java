@@ -10,13 +10,12 @@ import java.util.ArrayList;
  *
  * @author Veronica
  */
-
 public abstract class Salon {
 
     public String nombre;
-    public ArrayList<Usuario> listaUsuario = new ArrayList <>  ();
+    public ArrayList<Usuario> listaUsuario = new ArrayList<>();
     public static GestorSalones gc = new GestorSalones();
-    public int numMensajes; 
+    public int numMensajes;
 
     public int getClientesConectados() {
         return listaUsuario.size();
@@ -30,14 +29,19 @@ public abstract class Salon {
         listaUsuario.add(user);
 
     }
-    
+
     public int getMensajes() {
         return numMensajes;
     }
 
     public void incrementarMensajes() {
         numMensajes++;
-    
+
+    }
+
+    public void registrarDesconexionSalon(Usuario user) {
+
+        listaUsuario.remove(user);
 
     }
 }

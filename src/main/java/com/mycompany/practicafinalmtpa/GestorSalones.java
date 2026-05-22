@@ -15,7 +15,7 @@ public class GestorSalones {
     //igual tambien hay q hacer un arraylist de Salones no solo de su nombre
     //o se puede hacer solo el arrylist de salones y q luego haga el getter del nombre
 
-    public ArrayList<String> getListaSalones() {
+    public ArrayList<Salon> getListaSalones() {
         return listaSalones;
     }
     
