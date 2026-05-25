@@ -11,11 +11,11 @@ package com.mycompany.practicafinalmtpa;
 public class SalonManga extends Salon {
         public static SalonManga instancia;
 
-    private SalonIA() {}
+    private SalonManga() {}
 
-    public static SalonIA getInstancia() {
+    public static SalonManga getInstancia() {
         if (instancia == null) {
-            instancia = new SalonIA();
+            instancia = new SalonManga();
         }
         return instancia;
     }

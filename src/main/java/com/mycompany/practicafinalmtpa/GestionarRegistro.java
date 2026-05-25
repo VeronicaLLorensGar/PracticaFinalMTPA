@@ -8,13 +8,13 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-public class Registro {
+public class GestionarRegistro {
     
     public GestorContraseña gc = new GestorContraseña();
     public GestorUsuarios gu = new GestorUsuarios();
     
     public void iniciarRegistro(String nombre){
-        boolean existeNombre= gu.existeNombre(nombre);
+        boolean existeNombre = gu.existeNombre(nombre);
       
         if(existeNombre){
             

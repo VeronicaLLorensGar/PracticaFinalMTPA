@@ -38,7 +38,7 @@ public class GestorContraseña {
                 String[] partes = linea.split(";");
                 int comprobar = Integer.parseInt(partes[1]);
 
-                if (comprobar== password) {
+                if (comprobar == password) {
                     return true;
                 }
             }

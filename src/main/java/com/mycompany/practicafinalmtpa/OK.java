@@ -10,8 +10,8 @@ package com.mycompany.practicafinalmtpa;
  */
 public class OK implements Comando{
 
-    @Override
-    public void procesarMensaje(String comando) {
+   
+    public void ejecutar(String comando) {
     }
     
 }

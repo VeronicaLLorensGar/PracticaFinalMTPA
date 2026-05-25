@@ -8,14 +8,13 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-public class REGISTER implements Comando{
-    public GestionarRegistro gr = new GestionarRegistro();
+public class LOGIN implements Comando{
+    public GestorLogin gl = new GestorLogin();
     @Override
     public void ejecutar(String[] parte) {
-        String nombre = parte[1];       
-        gr.iniciarRegistro(nombre);
+        String nombre = parte[1];
+        int password = Integer.parseInt(parte[2]);
+        gl.validarCredenciales(nombre, password);
     }
-
-  
     
 }

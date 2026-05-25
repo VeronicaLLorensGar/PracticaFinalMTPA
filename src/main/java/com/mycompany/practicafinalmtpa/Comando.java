@@ -8,7 +8,8 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
+//igual convertir esto en una clase abstraca y meter todos los gestores nose
 public interface Comando {
-    public void ejecutar(String[] partes);
+    public void ejecutar(String[] parte);
     
 }
