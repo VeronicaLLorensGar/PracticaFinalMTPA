@@ -8,10 +8,10 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-//gestiona lso comandos que le llegan al cliente
+//gestiona lso comandos que llegan al cliente
 public class FactoriaComandosCliente implements FactoriaComando {
 
-    public static Comando generarComando(String comando) {
+    public static Comando generarComando(String tipo) {
         if (tipo.equals("OK")) {
             return new OK();
         }

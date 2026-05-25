@@ -8,7 +8,7 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-//gestiona los comandos que le llegan al servidor
+//gestiona los comandos que llegan al servidor
 public class FactoriaComandosServidor implements FactoriaComando {
 
     public static Comando generarComando(String comando) {
