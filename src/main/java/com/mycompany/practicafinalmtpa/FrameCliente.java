@@ -1,4 +1,3 @@
-
 package com.mycompany.practicafinalmtpa;
 
 import java.awt.CardLayout;
@@ -10,11 +9,25 @@ public class FrameCliente extends javax.swing.JFrame {
      */
     public FrameCliente() {
         initComponents();
-        
+
         panelContenedor.add(new PanelSalones(), "salones");
         CardLayout cl = (CardLayout) panelContenedor.getLayout();
         cl.show(panelContenedor, "salones");
 
+    }
+
+    public void mostrarChatSalon(String salon) {
+        PanelChatSalon panelChat = new PanelChatSalon(salon);
+
+        panelContenedor.add(panelChat, "chat");
+        CardLayout cl = (CardLayout) panelContenedor.getLayout();
+        cl.show(panelContenedor, "chat");
+    }
+    
+    public void mostrarSalones(){
+    
+    CardLayout cl =(CardLayout) panelContenedor.getLayout();
+    cl.show(panelContenedor, "salones");
     }
 
     /**

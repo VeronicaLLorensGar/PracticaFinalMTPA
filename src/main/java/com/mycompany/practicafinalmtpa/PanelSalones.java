@@ -21,9 +21,9 @@ public class PanelSalones extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
+        PanelSalones = new javax.swing.JScrollPane();
         listaSalones = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
+        BotonEntrarSalon = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(750, 500));
 
@@ -32,11 +32,11 @@ public class PanelSalones extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(listaSalones);
+        PanelSalones.setViewportView(listaSalones);
         listaSalones.getAccessibleContext().setAccessibleName("");
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BotonEntrarSalon.setLabel("Entrar");
+        BotonEntrarSalon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEntrarActionPerformed(evt);
             }
@@ -48,18 +48,18 @@ public class PanelSalones extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2)
+                .addComponent(BotonEntrarSalon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(563, Short.MAX_VALUE))
+                .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(566, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotonEntrarSalon)
+                    .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(394, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -72,15 +72,15 @@ public class PanelSalones extends javax.swing.JPanel {
         (null, "Selecciona un salon primero");
         return;
         }
-        FrameCliente FrameClientes = 
+        FrameCliente frameClientes = 
             (FrameCliente)SwingUtilities.getWindowAncestor(this);
-        FrameClientes.mostrarChatSalon(salonSeleccionado);
+        frameClientes.mostrarChatSalon(salonSeleccionado);
     }//GEN-LAST:event_botonEntrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton BotonEntrarSalon;
+    private javax.swing.JScrollPane PanelSalones;
     private javax.swing.JList<String> listaSalones;
     // End of variables declaration//GEN-END:variables
 }
