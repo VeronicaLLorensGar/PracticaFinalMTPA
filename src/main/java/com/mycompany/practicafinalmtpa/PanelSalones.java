@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.practicafinalmtpa;
 
-/**
- *
- * @author david
- */
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 public class PanelSalones extends javax.swing.JPanel {
 
     /**
@@ -27,17 +22,25 @@ public class PanelSalones extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaSalones = new javax.swing.JList<>();
+        jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(750, 500));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+        listaSalones.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "IA", "Deportes", "Therian", "Manga", "UEMC" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList1);
-        jList1.getAccessibleContext().setAccessibleName("");
+        jScrollPane2.setViewportView(listaSalones);
+        listaSalones.getAccessibleContext().setAccessibleName("");
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEntrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -45,21 +48,39 @@ public class PanelSalones extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(563, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+    private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
+        
+        String salonSeleccionado= listaSalones.getSelectedValue();
+
+        if(salonSeleccionado==null){
+        JOptionPane.showMessageDialog
+        (null, "Selecciona un salon primero");
+        return;
+        }
+        FrameCliente FrameClientes = 
+            (FrameCliente)SwingUtilities.getWindowAncestor(this);
+        FrameClientes.mostrarChatSalon(salonSeleccionado);
+    }//GEN-LAST:event_botonEntrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listaSalones;
     // End of variables declaration//GEN-END:variables
 }
