@@ -13,14 +13,17 @@ import java.io.*;
 
 public class Cliente {
 
-    public static void main(String args[]) {
-        Socket s = null;
+    public static Socket s = null;
+    public static DataInputStream in;
+    public static DataOutputStream out;
+
+    public static void inciarCleinte() {
+
         try {
             int serverPort = 7896;
             s = new Socket("localhost", serverPort);
-            DataInputStream in = new DataInputStream(s.getInputStream());
-            DataOutputStream out = new DataOutputStream(s.getOutputStream());
-            out.writeUTF(args[0]);
+            in = new DataInputStream(s.getInputStream());
+            out = new DataOutputStream(s.getOutputStream());
             String data = in.readUTF();
             System.out.println("Received: " + data);
         } catch (UnknownHostException e) {
@@ -36,5 +39,9 @@ public class Cliente {
                 System.out.println("close:" + e.getMessage());
             }
         }
+    }
+
+    public void enviarMensajeServidor(String mensaje) throws IOException {
+        out.writeUTF(mensaje);
     }
 }
