@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.practicafinalmtpa;
+
+/**
+ *
+ * @author Veronica
+ */
+public class Registro {
+    
+    public GestorContraseña gc = new GestorContraseña();
+    public GestorUsuarios gu = new GestorUsuarios();
+    
+    public void iniciarRegistro(String nombre){
+        boolean existeNombre= gu.existeNombre(nombre);
+      
+        if(existeNombre){
+            
+            int password = gc.generarContraseña();
+            Usuario u = new Usuario(nombre, password);
+            
+        }else{
+            //aqui mandar un error de que ese nombre ya existe
+        }
+        
+        
+    }
+    
+    
+    
+}
