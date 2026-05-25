@@ -11,8 +11,8 @@ package com.mycompany.practicafinalmtpa;
 //gestiona los comandos que llegan al servidor
 public class FactoriaComandosServidor implements FactoriaComando {
 
-    public static Comando generarComando(String comando) {
-        if (tipo.equals("REGISTER")) {
+    public Comando gestionarComando(String tipo) {
+        if (tipo.equalsIgnoreCase("REGISTER")) {
             return new REGISTER();
         }
         if (tipo.equals("LOGIN")) {
@@ -49,6 +49,8 @@ public class FactoriaComandosServidor implements FactoriaComando {
             return new DENY_FRIEND_REQUEST();
         }
   
-    }
+    return ERROR; //aqui algo de error;
+
+}
 
 }

@@ -9,6 +9,7 @@ package com.mycompany.practicafinalmtpa;
  * @author Veronica
  */
 public interface FactoriaComando {
-        public Comando generarComando(String comando);
+        public Comando gestionarComando(String comando);
+
     
 }

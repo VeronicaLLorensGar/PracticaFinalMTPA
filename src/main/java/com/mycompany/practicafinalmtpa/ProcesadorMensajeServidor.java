@@ -8,34 +8,21 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
+//esta clase igual al final no tiene que hacer esto
 public class ProcesadorMensajeServidor {
-    String [] parte;  
-    
-    
-    //la vdd esq esto no es muy principio open-closed pq si se cambia el protocolo o se añade loq sea hay q cambiarlo asi q esto es temporal
-//    public String[] getParte1() {
-//        return parte[1];
-//    }
-//      public String[] getParte2() {
-//        return parte[2];
-//    }
-//       public String[] getPartes3() {
-//        return parte[3];
-//    }
-//         public String[] getParte4() {
-//        return parte[4];
-//    }
-    public void separarComando(String mensaje) {
-        
-        
-        parte = mensaje.split(";");
+
+    public void separarComando(String protocolo) {
+
+        String [] parte = protocolo.split(";");
         String comando = parte[0];
-        
-        FactoriaComando fc= new FactoriaComandosServidor();
-        fc.generarComando(comando);
-        
+
+    
+
+        FactoriaComando fc = new FactoriaComandosServidor();
+        Comando c = fc.gestionarComando(comando);
+
+        c.ejecutar(parte);
 
     }
 
 }
-    

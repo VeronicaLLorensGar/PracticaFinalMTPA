@@ -11,7 +11,8 @@ package com.mycompany.practicafinalmtpa;
 //gestiona lso comandos que llegan al cliente
 public class FactoriaComandosCliente implements FactoriaComando {
 
-    public static Comando generarComando(String tipo) {
+    @Override
+    public Comando gestionarComando(String tipo) {
         if (tipo.equals("OK")) {
             return new OK();
         }

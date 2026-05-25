@@ -16,11 +16,12 @@ import java.net.Socket;
  */
 public class Connection
         extends Thread {
-    
+
     DataInputStream in;
     DataOutputStream out;
     Socket clientSocket;
     EstadoServidor estado = EstadoServidor.getEstado();
+
     public Connection(Socket aClientSocket) {
         try {
             clientSocket = aClientSocket;
@@ -37,12 +38,12 @@ public class Connection
             //aqui hay q poner un while o algo pq si no se recibe y se envia un mensaje y se cierrra, pero ahora mismo nose
             String protocolo = in.readUTF();
             enviarMensaje();
-            
+
+           
             ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
             pm.separarComando(protocolo);
             
 
-            
         } catch (EOFException e) {
             System.out.println("EOF:" + e.getMessage());
         } catch (IOException e) {
@@ -57,13 +58,13 @@ public class Connection
         }
 
     }
-    public void enviarMensaje() throws IOException{
+
+    public void enviarMensaje() throws IOException {
         out.writeUTF("");//revisar cuando hagamos la clase de generar respuestas y el argumento con la respuesta a enviar
     }
-    
+
     //diferenciamos ambos tipos de mensajes por el formato desconocido no sabemos de momento
-   /* public void enviarRespuesta(respuesta)throws IOException{
+    /* public void enviarRespuesta(respuesta)throws IOException{
     out.writeUTF(respuesta);
     }*/
 }
-

@@ -9,6 +9,6 @@ package com.mycompany.practicafinalmtpa;
  * @author Veronica
  */
 public interface Comando {
-    public void procesarMensaje();
+    public void ejecutar(String[] partes);
     
 }
