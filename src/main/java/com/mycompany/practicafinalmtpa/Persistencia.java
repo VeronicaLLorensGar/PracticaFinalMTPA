@@ -8,10 +8,6 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-public class OK implements Comando{
-
-   
-    public void ejecutar(String partes[]) {
-    }
+public class Persistencia {
     
 }

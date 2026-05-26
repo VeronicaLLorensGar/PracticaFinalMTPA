@@ -27,6 +27,7 @@ public class Connection
             clientSocket = aClientSocket;
             in = new DataInputStream(clientSocket.getInputStream());
             out = new DataOutputStream(clientSocket.getOutputStream());
+            estado.registrarConexion();
             this.start();
         } catch (IOException e) {
             System.out.println("Connection:" + e.getMessage());
@@ -35,14 +36,15 @@ public class Connection
 
     public void run() {
         try {
-            //aqui hay q poner un while o algo pq si no se recibe y se envia un mensaje y se cierrra, pero ahora mismo nose
+            
+            while(true){
             String protocolo = in.readUTF();
             enviarMensaje();
 
            
             ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
             pm.separarComando(protocolo);
-            
+            }
 
         } catch (EOFException e) {
             System.out.println("EOF:" + e.getMessage());
@@ -51,7 +53,6 @@ public class Connection
         } finally {
             try {
                 clientSocket.close();
-                //esto es un poco pocho, no me gusta
                 estado.registrarDesconexion();
             } catch (IOException e) {
             }

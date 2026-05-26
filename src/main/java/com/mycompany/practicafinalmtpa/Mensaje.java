@@ -12,8 +12,9 @@ import java.util.Date;
  */
 
 public class Mensaje {
-    String mensaje;
-    String user;
-    Date date;
+    public String mensaje;
+    public String user;
+    public Date date;
+    public int tamaño = 190;
     
 }

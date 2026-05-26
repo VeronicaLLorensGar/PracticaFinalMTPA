@@ -7,12 +7,14 @@ package com.mycompany.practicafinalmtpa;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
  * @author Veronica
  */
 public class GestorUsuarios {
+    private static ArrayList<Usuario> listUsers = new ArrayList<>();
 
     private static final String fichero = "usuarios.txt";
 

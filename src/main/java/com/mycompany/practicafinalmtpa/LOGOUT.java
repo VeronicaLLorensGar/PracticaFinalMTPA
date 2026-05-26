@@ -8,10 +8,11 @@ package com.mycompany.practicafinalmtpa;
  *
  * @author Veronica
  */
-public class OK implements Comando{
+public class LOGOUT implements Comando{
 
-   
-    public void ejecutar(String partes[]) {
+    @Override
+    public void ejecutar(String[] parte) {
+        
     }
     
 }

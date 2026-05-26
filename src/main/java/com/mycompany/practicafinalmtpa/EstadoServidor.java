@@ -4,15 +4,21 @@
  */
 package com.mycompany.practicafinalmtpa;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Veronica
  */
 
 public class EstadoServidor {
+    
+    
+    
 
     private boolean mantenimiento = false;
     public static int MAX_CLIENTES = 20;
+    private int clientesConectados = 0;
 
     public static EstadoServidor estado;
 
@@ -27,7 +33,7 @@ public class EstadoServidor {
         return estado;
     }
 
-    private int clientesConectados = 0;
+    
 
     public int getClientesConectados() {
         return clientesConectados;
