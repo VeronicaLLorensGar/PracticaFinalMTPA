@@ -1,6 +1,8 @@
 package com.mycompany.practicafinalmtpa;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 //importa el paquete entero de java.swinx  y java.awt el *
 import javax.swing.*;
 
@@ -18,10 +20,10 @@ public class PanelChatSalon extends JPanel{
     public PanelChatSalon(String salon){
     
         this.salon=salon;
-        initComponentes();
+        iniciarComponentes();
     }
     
-    private void initComponentes(){
+    private void iniciarComponentes(){
         
         lblNombreSalon= new JLabel ("Salon: "+salon);
         lblNombreSalon.setFont(new Font("Calibri",Font.BOLD,18));
@@ -55,14 +57,36 @@ public class PanelChatSalon extends JPanel{
 
         add(panelInferior, BorderLayout.SOUTH);
         
-        botonVolver.addActionListener(e-> VolverASalones());
+        //significado?
+        botonVolver.addActionListener((ActionEvent e) -> {
+            volverASalones();
+        });
+        
+        botonEnviar.addActionListener((ActionEvent e2) -> {
+            enviarMensaje();
+    });
     }
     
-    private void VolverASalones(){
+    private void volverASalones(){
     
-        FrameCliente ventana =(FrameCliente) SwingUtilities.getWindowAncestor(this);
+        //Cast del Jframe a FrameCliente para poder usar mostrarSalones...
+        FrameCliente ventana =(FrameCliente)
+                SwingUtilities.getWindowAncestor(this);
         ventana.mostrarSalones();
     
+    }
+    
+    private void enviarMensaje(){
+    
+        String texto = campoMensaje.getText().trim();
+        
+        if(!texto.isEmpty()){
+        
+            areaMensajes.append("Yo:"+texto+"\n");
+            campoMensaje.setText("");
+        
+        }
+        
     }
 
 }
