@@ -2,17 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicafinalmtpa;
+package com.mycompany.practicafinalmtpa.cliente;
 
 /**
  *
  * @author Veronica
  */
-public class LOGOUT implements Comando{
+public class Usuario {
+    public String nombre;
+    private int contraseña;
 
-    @Override
-    public void ejecutar(String[] parte) {
+    public Usuario(String nombre, int contraseña) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
         
     }
+    
     
 }

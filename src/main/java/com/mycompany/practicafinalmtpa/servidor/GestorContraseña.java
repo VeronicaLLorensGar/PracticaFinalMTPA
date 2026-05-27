@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicafinalmtpa;
+package com.mycompany.practicafinalmtpa.servidor;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -22,7 +22,7 @@ public class GestorContraseña {
         Random random = new Random();
         boolean encontrado = false;
         
-        while(!encontrado){
+        while(encontrado){
         password = 10000 + random.nextInt(90000);
         encontrado = existePassword(password);
         }

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicafinalmtpa;
+package com.mycompany.practicafinalmtpa.salones;
 
+import com.mycompany.practicafinalmtpa.cliente.Usuario;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +15,6 @@ public abstract class Salon {
 
     public String nombre;
     public ArrayList<Usuario> listaUsuario = new ArrayList<>();
-    public static GestorSalones gc = new GestorSalones();
     public int numMensajes;
 
     public int getClientesConectados() {

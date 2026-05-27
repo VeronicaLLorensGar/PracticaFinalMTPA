@@ -2,22 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicafinalmtpa;
+package com.mycompany.practicafinalmtpa.salones;
+
+import com.mycompany.practicafinalmtpa.salones.Salon;
 
 /**
  *
  * @author Veronica
  */
-public class SalonIA extends Salon {
+public class SalonUEMC extends Salon {
 
-    public static SalonIA instancia;
+    public static SalonUEMC instancia;
 
-    private SalonIA() {
+    private SalonUEMC() {
     }
 
-    public static SalonIA getInstancia() {
+    public static SalonUEMC getInstancia() {
         if (instancia == null) {
-            instancia = new SalonIA();
+            instancia = new SalonUEMC();
         }
         return instancia;
     }
