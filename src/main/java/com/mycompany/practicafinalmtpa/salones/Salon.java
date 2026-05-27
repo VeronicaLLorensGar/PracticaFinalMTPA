@@ -4,7 +4,7 @@
  */
 package com.mycompany.practicafinalmtpa.salones;
 
-import com.mycompany.practicafinalmtpa.cliente.Usuario;
+import com.mycompany.practicafinalmtpa.servidor.Usuario;
 import java.util.ArrayList;
 
 /**

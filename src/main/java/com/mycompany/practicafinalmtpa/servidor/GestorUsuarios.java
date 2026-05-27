@@ -4,7 +4,6 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-import com.mycompany.practicafinalmtpa.cliente.Usuario;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicafinalmtpa.servidor;
+package com.mycompany.practicafinalmtpa.validador;
 
 import com.mycompany.practicafinalmtpa.servidor.GestorUsuarios;
 import com.mycompany.practicafinalmtpa.servidor.GestorContraseña;
+import com.mycompany.practicafinalmtpa.servidor.GestorContraseña;
+import com.mycompany.practicafinalmtpa.servidor.GestorUsuarios;
 
 /**
  *

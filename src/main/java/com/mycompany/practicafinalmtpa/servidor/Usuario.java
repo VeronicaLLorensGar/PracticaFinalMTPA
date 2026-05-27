@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicafinalmtpa.cliente;
+package com.mycompany.practicafinalmtpa.servidor;
 
 /**
  *
@@ -16,6 +16,14 @@ public class Usuario {
         this.nombre = nombre;
         this.contraseña = contraseña;
         
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getContraseña() {
+        return contraseña;
     }
     
     

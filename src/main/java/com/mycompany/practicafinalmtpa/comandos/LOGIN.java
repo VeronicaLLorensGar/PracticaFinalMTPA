@@ -5,7 +5,7 @@
 package com.mycompany.practicafinalmtpa.comandos;
 
 import com.mycompany.practicafinalmtpa.comandos.Comando;
-import com.mycompany.practicafinalmtpa.servidor.ValidadorAcceso;
+import com.mycompany.practicafinalmtpa.validador.ValidadorAcceso;
 
 /**
  *

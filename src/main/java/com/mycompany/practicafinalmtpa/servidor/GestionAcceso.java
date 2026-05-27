@@ -4,7 +4,6 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-import com.mycompany.practicafinalmtpa.cliente.Usuario;
 import com.mycompany.practicafinalmtpa.servidor.GestorUsuarios;
 import com.mycompany.practicafinalmtpa.servidor.GestorContraseña;
 
@@ -12,7 +11,7 @@ import com.mycompany.practicafinalmtpa.servidor.GestorContraseña;
  *
  * @author Veronica
  */
-public class GestionarRegistro {
+public class GestionAcceso {
     
     public GestorContraseña gc = new GestorContraseña();
     public GestorUsuarios gu = new GestorUsuarios();
