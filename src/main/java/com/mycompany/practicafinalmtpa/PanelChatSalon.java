@@ -58,7 +58,7 @@ public class PanelChatSalon extends JPanel{
         add(panelInferior, BorderLayout.SOUTH);
         
         //significado?
-        botonVolver.addActionListener((ActionEvent e) -> {
+        botonVolver.addActionListener((ActionEvent e1) -> {
             volverASalones();
         });
         

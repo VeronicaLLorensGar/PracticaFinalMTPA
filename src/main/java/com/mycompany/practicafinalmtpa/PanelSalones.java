@@ -1,16 +1,69 @@
 package com.mycompany.practicafinalmtpa;
 
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import javax.swing.*;
 
 public class PanelSalones extends javax.swing.JPanel {
+    private DefaultListModel<String> modeloUsuarios;
+    private JList<String> usuariosConectados;
+    private DataOutputStream salida;
+    private JButton botonChatPrivado;
 
     /**
      * Creates new form PanelSalones
      */
     public PanelSalones() {
         initComponents();
+        
+        this.salida=salida;
+        
+        JButton botonChatPrivado = new JButton("Chat privado");
+        panelUsuarios.add(botonChatPrivado,BorderLayout.SOUTH);
+
+        
+        modeloUsuarios= new DefaultListModel<>();
+        usuariosConectados = new JList<>(modeloUsuarios);
+        
+        JScrollPane scrollUsuarios = new JScrollPane(usuariosConectados);
+        panelUsuarios.add(scrollUsuarios,BorderLayout.CENTER);
+    
+         botonChatPrivado.addActionListener((ActionEvent e3) -> {
+            iniciarChatPrivado();
+        });
     }
+    
+    public void actualizarUsuarios(String[] usuarios){
+    
+        modeloUsuarios.clear();
+        for(String u: usuarios){
+            modeloUsuarios.addElement(u);
+        }
+        
+    }
+    
+    private void iniciarChatPrivado(){
+    
+        String usuario= usuariosConectados.getSelectedValue();
+        
+        if(usuario==null){
+            JOptionPane.showMessageDialog
+        (this, "Selecciona un usuario");
+            return;
+        }
+            try{
+            
+            salida.writeUTF("/crearChatPrivado" + usuario);
+            salida.flush();
+            }catch(IOException ex){
+                System.out.println("No se pudo enviar el mensaje: "+ ex.getMessage());
+            }
+        
+        }
+        
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -24,6 +77,7 @@ public class PanelSalones extends javax.swing.JPanel {
         PanelSalones = new javax.swing.JScrollPane();
         listaSalones = new javax.swing.JList<>();
         BotonEntrarSalon = new javax.swing.JButton();
+        panelUsuarios = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(750, 500));
 
@@ -42,15 +96,29 @@ public class PanelSalones extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
+        panelUsuarios.setLayout(panelUsuariosLayout);
+        panelUsuariosLayout.setHorizontalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        panelUsuariosLayout.setVerticalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BotonEntrarSalon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BotonEntrarSalon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(566, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -60,7 +128,9 @@ public class PanelSalones extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BotonEntrarSalon)
                     .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(276, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
@@ -69,7 +139,7 @@ public class PanelSalones extends javax.swing.JPanel {
 
         if(salonSeleccionado==null){
         JOptionPane.showMessageDialog
-        (null, "Selecciona un salon primero");
+        (this, "Selecciona un salon primero");
         return;
         }
         FrameCliente frameClientes = 
@@ -82,5 +152,6 @@ public class PanelSalones extends javax.swing.JPanel {
     private javax.swing.JButton BotonEntrarSalon;
     private javax.swing.JScrollPane PanelSalones;
     private javax.swing.JList<String> listaSalones;
+    private javax.swing.JPanel panelUsuarios;
     // End of variables declaration//GEN-END:variables
 }
