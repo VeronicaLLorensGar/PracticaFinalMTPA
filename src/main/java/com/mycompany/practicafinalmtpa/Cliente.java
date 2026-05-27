@@ -17,7 +17,7 @@ public class Cliente {
     public static DataInputStream in;
     public static DataOutputStream out;
 
-    public static void inciarCleinte() {
+    public static void inciarCliente() {
 
         try {
             int serverPort = 7896;
@@ -25,6 +25,7 @@ public class Cliente {
             in = new DataInputStream(s.getInputStream());
             out = new DataOutputStream(s.getOutputStream());
             String data = in.readUTF();
+            
             System.out.println("Received: " + data);
         } catch (UnknownHostException e) {
             System.out.println("Socket:" + e.getMessage());
