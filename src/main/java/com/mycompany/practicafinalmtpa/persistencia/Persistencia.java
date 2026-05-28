@@ -5,11 +5,9 @@
 package com.mycompany.practicafinalmtpa.persistencia;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import com.mycompany.practicafinalmtpa.servidor.Usuario;
 import com.mycompany.practicafinalmtpa.mensajes.Mensaje;

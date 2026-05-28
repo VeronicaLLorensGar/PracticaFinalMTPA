@@ -4,11 +4,10 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-import com.mycompany.practicafinalmtpa.servidor.EstadoServidor;
+
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
-
 public class Servidor {
 
 

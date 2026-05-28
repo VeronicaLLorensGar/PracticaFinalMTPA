@@ -4,7 +4,7 @@
  */
 package com.mycompany.practicafinalmtpa.salones;
 
-import com.mycompany.practicafinalmtpa.salones.Salon;
+
 
 /**
  *
@@ -18,7 +18,6 @@ public class SalonTherian extends Salon {
     public static SalonTherian getInstancia() {
         if (instancia == null) {
             instancia = new SalonTherian();
-            gc.añadirLista(instancia);
             
         }
         return instancia;
