@@ -4,19 +4,20 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
-import com.mycompany.practicafinalmtpa.servidor.GestionAcceso;
+
 
 /**
  *
  * @author Veronica
  */
 public class REGISTER implements Comando{
-    public GestionAcceso ga = new GestionAcceso();
-    @Override
-    public void ejecutar(String[] parte) {
-        String nombre = parte[1];       
-        ga.iniciarRegistro(nombre);
-    }
+    //esto va a haber q cambiarlo si lo hacemos todo con gestion sistema
+//    public GestionAcceso ga = new GestionAcceso();
+//    @Override
+//    public void ejecutar(String[] parte) {
+//        String nombre = parte[1];       
+//        ga.iniciarRegistro(nombre);
+  //  }
 
   
     

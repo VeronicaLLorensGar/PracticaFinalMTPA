@@ -4,20 +4,19 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
-import com.mycompany.practicafinalmtpa.comandos.Comando;
-import com.mycompany.practicafinalmtpa.validador.ValidadorAcceso;
+
 
 /**
  *
  * @author Veronica
  */
 public class LOGIN implements Comando{
-    public ValidadorAcceso v = new ValidadorAcceso();
+
     @Override
     public void ejecutar(String[] parte) {
         String nombre = parte[1];
         int password = Integer.parseInt(parte[2]);
-        v.validarCredenciales(nombre, password);
+       //hay q pasarselo a gestion sistema
     }
     
 }
