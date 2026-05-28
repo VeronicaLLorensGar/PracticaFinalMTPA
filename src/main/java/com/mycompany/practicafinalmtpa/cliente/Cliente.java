@@ -4,10 +4,6 @@
  */
 package com.mycompany.practicafinalmtpa.cliente;
 
-/**
- *
- * @author Veronica
- */
 import java.net.*;
 import java.io.*;
 

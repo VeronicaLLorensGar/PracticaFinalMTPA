@@ -15,6 +15,6 @@ public class Mensaje {
     public String mensaje;
     public String user;
     public Date date;
-    public int tamaño = 190;
+    public static final int tamaño = 190;
     
 }

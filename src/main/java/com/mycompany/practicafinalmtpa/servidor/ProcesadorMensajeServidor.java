@@ -8,11 +8,6 @@ import com.mycompany.practicafinalmtpa.comandos.Comando;
 import com.mycompany.practicafinalmtpa.comandos.FactoriaComando;
 import com.mycompany.practicafinalmtpa.comandos.FactoriaComandosServidor;
 
-/**
- *
- * @author Veronica
- */
-//esta clase igual al final no tiene que hacer esto
 public class ProcesadorMensajeServidor {
 
     public void separarComando(String protocolo) {

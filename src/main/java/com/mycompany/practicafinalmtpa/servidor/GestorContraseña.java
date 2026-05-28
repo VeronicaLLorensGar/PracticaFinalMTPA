@@ -20,7 +20,7 @@ public class GestorContraseña {
     public int generarContraseña() {
         int password= 0;
         Random random = new Random();
-        boolean encontrado = false;
+        boolean encontrado = true;
         
         while(encontrado){
         password = 10000 + random.nextInt(90000);

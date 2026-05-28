@@ -4,8 +4,7 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-import com.mycompany.practicafinalmtpa.servidor.GestorUsuarios;
-import com.mycompany.practicafinalmtpa.servidor.GestorContraseña;
+
 
 /**
  *
@@ -31,6 +30,17 @@ public class GestionAcceso {
         
     }
     
-    
-    
+public String login(String nombre, int password) {
+
+        if (gu.validarCredenciales(nombre, password)) {
+            return //comando ok
+        }
+
+        return //comando error
+    }
 }
+
+    
+    
+    
+

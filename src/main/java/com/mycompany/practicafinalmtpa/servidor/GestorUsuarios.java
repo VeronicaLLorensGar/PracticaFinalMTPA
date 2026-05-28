@@ -7,7 +7,7 @@ package com.mycompany.practicafinalmtpa.servidor;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 /**
  *
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 //va a haber que hacer algo con el tema de los gestores, o in singleton o algo pq todos tiene q  tener las mismas listas y manejarlas
 public class GestorUsuarios {
-    private static ArrayList<Usuario> listUsers = new ArrayList<>();
+
 
     private static final String fichero = "usuarios.txt";
 
@@ -28,12 +28,37 @@ public class GestorUsuarios {
                 String[] partes = linea.split(";");
 
                 if (partes[0].equals(nombre)) {
-                    return true;               
+                    return true;
                 }
             }
 
         } catch (IOException e) {
 
+        }
+
+        return false;
+    }
+
+    
+    public boolean validarCredenciales(String nombre, int contraseña) {
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
+
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+
+                String[] partes = linea.split(";");
+
+                String user = partes[0];
+                int pass = Integer.parseInt(partes[1]);
+
+                if (user.equals(nombre) && pass == contraseña) {
+                    return true;
+                }
+            }
+
+        } catch (IOException e) {
         }
 
         return false;

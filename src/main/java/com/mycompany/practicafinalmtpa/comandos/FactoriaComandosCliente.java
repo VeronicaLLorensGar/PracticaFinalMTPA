@@ -4,8 +4,7 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
-import com.mycompany.practicafinalmtpa.comandos.FactoriaComando;
-import com.mycompany.practicafinalmtpa.comandos.Comando;
+
 
 /**
  *

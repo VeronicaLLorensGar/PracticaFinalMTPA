@@ -9,7 +9,7 @@ package com.mycompany.practicafinalmtpa.servidor;
  * @author Veronica
  */
 public class Usuario {
-    public String nombre;
+    private String nombre;
     private int contraseña;
 
     public Usuario(String nombre, int contraseña) {

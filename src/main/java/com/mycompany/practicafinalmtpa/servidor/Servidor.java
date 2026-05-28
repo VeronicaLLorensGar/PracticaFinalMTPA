@@ -25,7 +25,7 @@ public class Servidor {
                 
                 if (estado.aceptarClientes()) {
                     Connection c = new Connection(clientSocket);
-                    estado.registrarConexion();
+                    
                 } else {
                     //llamar a una clase que el cliente que se quiera conectar mande un mensaje de q no se puede una notify
                    
