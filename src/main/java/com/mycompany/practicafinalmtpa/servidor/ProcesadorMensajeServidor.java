@@ -10,7 +10,7 @@ import com.mycompany.practicafinalmtpa.comandos.FactoriaComandosServidor;
 
 public class ProcesadorMensajeServidor {
 
-    public void separarComando(String protocolo) {
+    public void separarComando(String protocolo, Conecction c) {
 
         String [] parte = protocolo.split(";");
         String comando = parte[0];
@@ -20,7 +20,7 @@ public class ProcesadorMensajeServidor {
         FactoriaComando fc = new FactoriaComandosServidor();
         Comando c = fc.gestionarComando(comando);
 
-        c.ejecutar(parte);
+        c.ejecutar(parte, c);
 
     }
 

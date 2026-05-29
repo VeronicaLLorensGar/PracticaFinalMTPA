@@ -45,8 +45,5 @@ public class FactoriaComandosCliente implements FactoriaComando {
         if (tipo.equals("SEND_FRIEND_REQUEST")) {
             return new SEND_FRIEND_REQUEST();
         }
-        if (tipo.equals("SEND_MESSAGE")) {
-            return new SEND_MESSAGE();
-        }
 
     }

@@ -4,8 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-import com.mycompany.practicafinalmtpa.servidor.ProcesadorMensajeServidor;
-import com.mycompany.practicafinalmtpa.servidor.EstadoServidor;
+
+import com.mycompany.practicafinalmtpa.salones.Salon;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.EOFException;
@@ -24,6 +24,9 @@ public class Connection
     Socket clientSocket;
     EstadoServidor estado = EstadoServidor.getEstado();
 
+    private Usuario usuario;
+    private Salon salonActual;
+
     public Connection(Socket aClientSocket) {
         try {
             clientSocket = aClientSocket;
@@ -38,14 +41,13 @@ public class Connection
 
     public void run() {
         try {
-            
-            while(true){
-            String protocolo = in.readUTF();
-            enviarMensaje();
 
-           
-            ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
-            pm.separarComando(protocolo);
+            while (true) {
+                String protocolo = in.readUTF();
+                enviarMensaje();
+
+                ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
+                pm.separarComando(protocolo, this);
             }
 
         } catch (EOFException e) {
@@ -70,4 +72,20 @@ public class Connection
     /* public void enviarRespuesta(respuesta)throws IOException{
     out.writeUTF(respuesta);
     }*/
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Salon getSalonActual() {
+        return salonActual;
+    }
+
+    public void setSalonActual(Salon salonActual) {
+        this.salonActual = salonActual;
+    }
+
 }

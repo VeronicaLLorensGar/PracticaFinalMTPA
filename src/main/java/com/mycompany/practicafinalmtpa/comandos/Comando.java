@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.mycompany.practicafinalmtpa.comandos;
+import com.mycompany.practicafinalmtpa.servidor.Connection;
 
 /**
  *
@@ -10,6 +11,6 @@ package com.mycompany.practicafinalmtpa.comandos;
  */
 //igual convertir esto en una clase abstraca y meter todos los gestores nose
 public interface Comando {
-    public void ejecutar(String[] parte);
+    public void ejecutar(String[] parte, Connection c);
     
 }

@@ -4,6 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
+import com.mycompany.practicafinalmtpa.servidor.Connection;
+
 
 
 /**
@@ -13,7 +15,7 @@ package com.mycompany.practicafinalmtpa.comandos;
 public class LOGIN implements Comando{
 
     @Override
-    public void ejecutar(String[] parte) {
+    public void ejecutar(String[] parte, Connection c) {
         String nombre = parte[1];
         int password = Integer.parseInt(parte[2]);
        //hay q pasarselo a gestion sistema
