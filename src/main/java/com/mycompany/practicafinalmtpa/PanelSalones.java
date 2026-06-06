@@ -15,14 +15,15 @@ public class PanelSalones extends javax.swing.JPanel {
     /**
      * Creates new form PanelSalones
      */
-    public PanelSalones() {
+    public PanelSalones(DataOutputStream salida) {
         initComponents();
         
         this.salida=salida;
         
-        JButton botonChatPrivado = new JButton("Chat privado");
+        botonChatPrivado = new JButton("Chat privado");
         panelUsuarios.add(botonChatPrivado,BorderLayout.SOUTH);
 
+        panelUsuarios.setLayout(new BorderLayout());
         
         modeloUsuarios= new DefaultListModel<>();
         usuariosConectados = new JList<>(modeloUsuarios);
@@ -55,7 +56,7 @@ public class PanelSalones extends javax.swing.JPanel {
         }
             try{
             
-            salida.writeUTF("/crearChatPrivado" + usuario);
+            salida.writeUTF("/crearChatPrivado " + usuario);
             salida.flush();
             }catch(IOException ex){
                 System.out.println("No se pudo enviar el mensaje: "+ ex.getMessage());
@@ -96,15 +97,18 @@ public class PanelSalones extends javax.swing.JPanel {
             }
         });
 
+        panelUsuarios.setMinimumSize(new java.awt.Dimension(59, 90));
+        panelUsuarios.setPreferredSize(new java.awt.Dimension(59, 90));
+
         javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
         panelUsuarios.setLayout(panelUsuariosLayout);
         panelUsuariosLayout.setHorizontalGroup(
             panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panelUsuariosLayout.setVerticalGroup(
             panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 90, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -113,12 +117,11 @@ public class PanelSalones extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BotonEntrarSalon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(BotonEntrarSalon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(PanelSalones, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                 .addContainerGap(566, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -130,7 +133,7 @@ public class PanelSalones extends javax.swing.JPanel {
                     .addComponent(PanelSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(panelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed

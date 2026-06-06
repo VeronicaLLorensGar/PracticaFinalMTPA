@@ -3,14 +3,27 @@ package com.mycompany.practicafinalmtpa;
 import java.awt.CardLayout;
 
 public class FrameCliente extends javax.swing.JFrame {
-
+    
+    private Cliente cliente;
+    private PanelSalones panelSalones;
+    
     public FrameCliente() {
         initComponents();
 
-        panelContenedor.add(new PanelSalones(), "salones");
+        cliente = new Cliente(this);
+        cliente.iniciarCliente();
+        
+        panelSalones = new PanelSalones(cliente.getSalida());
+        panelContenedor.add(panelSalones, "salones");
+        
         CardLayout cl = (CardLayout) panelContenedor.getLayout();
         cl.show(panelContenedor, "salones");
 
+    }
+    
+    public PanelSalones getpanelSalones(){
+    
+    return panelSalones;
     }
 
     public void mostrarChatSalon(String salon) {
