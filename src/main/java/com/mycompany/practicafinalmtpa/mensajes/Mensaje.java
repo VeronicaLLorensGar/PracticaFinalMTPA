@@ -10,11 +10,21 @@ import java.util.Date;
  *
  * @author Veronica
  */
-
 public class Mensaje {
-    public String mensaje;
-    public String user;
-    public Date date;
-    public static final int tamaño = 190;
-    
+
+    private String mensaje;
+    private String user;
+    private Date date;
+    private static final int tamaño = 190;
+
+    public Mensaje(String mensaje, String user, Date date) {
+        if (mensaje.length() <= tamaño) {
+            this.mensaje = mensaje;
+            this.user = user;
+            date = LoacalDateTime.now();
+        }else{
+            //error
+        }
+    }
+
 }
