@@ -42,7 +42,8 @@ public class FactoriaComandosServidor implements FactoriaComando {
         if (tipo.equals("MESSAGE")) {
             return new MESSAGE();
         }
-        if (tipo.equals("PRIVATE_MESSAGE")) {
+        if (tipo.equals("PRIVATE_MESSAGE"))  //igual wquitar en el protocolo el username
+        {
             return new PRIVATE_MESSAGE();
         }
         if (tipo.equals("ACCEPT_FRIEND_REQUEST")) {

@@ -12,9 +12,5 @@ package com.mycompany.practicafinalmtpa.comandos;
  */
 public class LOGOUT implements Comando{
 
-    @Override
-    public void ejecutar(String[] parte) {
-        
-    }
     
 }

@@ -11,10 +11,15 @@ package com.mycompany.practicafinalmtpa.mensajes;
 public class MensajeSalon extends Mensaje {
     private String salon;
 
-    public MensajeSalon(String mensaje, String salon) {
-        super()
+    public MensajeSalon(String mensaje, String user, String salon) {
+        super(mensaje, user);
         this.salon = salon;
     }
     
+    public String getSalon() {
+        return salon;
+    }
+
+
     
 }

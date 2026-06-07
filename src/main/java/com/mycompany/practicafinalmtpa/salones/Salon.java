@@ -15,7 +15,15 @@ public abstract class Salon {
 
     public String nombre;
     public ArrayList<Usuario> listaUsuario = new ArrayList<>();
-    public int numMensajes;
+    public int numMensajes=0;
+
+    public ArrayList<Usuario> getListaUsuario() {
+        return listaUsuario;
+    }
+
+    public int getNumMensajes() {
+        return numMensajes;
+    }
 
     public int getClientesConectados() {
         return listaUsuario.size();

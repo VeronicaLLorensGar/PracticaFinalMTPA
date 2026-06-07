@@ -4,16 +4,21 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
+import com.mycompany.practicafinalmtpa.mensajes.MensajeSalon;
 import com.mycompany.practicafinalmtpa.servidor.Connection;
 
 /**
  *
  * @author Veronica
  */
-public class PRIVATE_MESSAGE implements Comando {
+public class MESSAGE implements Comando {
+
+    public void ejecutar(String[] parte, Connection c) {
 
 
-        
+    }
+}
 
     
-}
+    
+

@@ -46,7 +46,7 @@ public class Persistencia {
         try (FileWriter fw = new FileWriter(fichero, true); BufferedWriter bw = new BufferedWriter(fw)) {
 
             // formato: user;mensaje;timestamp
-            bw.write(m.user + ";" + m.mensaje + ";" + m.date.getTime());
+            bw.write(m.getUser() + ";" + m.getMensaje() + ";" + m.getDate());
             bw.newLine();
 
         } catch (IOException e) {

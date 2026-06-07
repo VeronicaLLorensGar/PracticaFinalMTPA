@@ -4,7 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.mensajes;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  *
@@ -14,14 +15,30 @@ public class Mensaje {
 
     private String mensaje;
     private String user;
-    private Date date;
+    private LocalDateTime date;
     private static final int tamaño = 190;
 
-    public Mensaje(String mensaje, String user, Date date) {
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public static int getTamaño() {
+        return tamaño;
+    }
+
+    public Mensaje(String mensaje, String user) {
         if (mensaje.length() <= tamaño) {
             this.mensaje = mensaje;
             this.user = user;
-            date = LoacalDateTime.now();
+            date = LocalDateTime.now();
         }else{
             //error
         }

@@ -4,6 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
+import com.mycompany.practicafinalmtpa.servidor.Connection;
+
 
 
 /**
@@ -11,13 +13,13 @@ package com.mycompany.practicafinalmtpa.comandos;
  * @author Veronica
  */
 public class REGISTER implements Comando{
-    //esto va a haber q cambiarlo si lo hacemos todo con gestion sistema
-//    public GestionAcceso ga = new GestionAcceso();
-//    @Override
-//    public void ejecutar(String[] parte) {
-//        String nombre = parte[1];       
-//        ga.iniciarRegistro(nombre);
-  //  }
+
+    @Override
+    public void ejecutar(String[] parte, Connection c) {
+        String nombre =
+        
+    }
+
 
   
     

@@ -68,10 +68,7 @@ public class Connection
         out.writeUTF("");//revisar cuando hagamos la clase de generar respuestas y el argumento con la respuesta a enviar
     }
 
-    //diferenciamos ambos tipos de mensajes por el formato desconocido no sabemos de momento
-    /* public void enviarRespuesta(respuesta)throws IOException{
-    out.writeUTF(respuesta);
-    }*/
+
     public Usuario getUsuario() {
         return usuario;
     }

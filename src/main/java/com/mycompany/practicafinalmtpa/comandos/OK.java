@@ -12,8 +12,5 @@ package com.mycompany.practicafinalmtpa.comandos;
  */
 public class OK implements Comando{
 
-   
-    public void ejecutar(String partes[]) {
-    }
     
 }

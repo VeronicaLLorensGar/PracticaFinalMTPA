@@ -11,6 +11,7 @@ package com.mycompany.practicafinalmtpa.comandos;
  * @author Veronica
  */
 //gestiona lso comandos que llegan al cliente
+
 public class FactoriaComandosCliente implements FactoriaComando {
 
     @Override
@@ -36,9 +37,11 @@ public class FactoriaComandosCliente implements FactoriaComando {
         if (tipo.equals("FRIENDS")) {
             return new OK();
         }
+        //igual este le quitamos
         if (tipo.equals("SEND_MESSAGE")) {
             return new SEND_MESSAGE();
         }
+        //igual le quitamos
         if (tipo.equals("PRIVATE_SEND_MESSAGE")) {
             return new PRIVATE_SEND_MESSAGE();
         }
