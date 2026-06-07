@@ -11,9 +11,9 @@ import java.io.*;
 
 public class Cliente {
 
-    public static Socket s = null;
-    public static DataInputStream in;
-    public static DataOutputStream out;
+    private Socket s = null;
+    private DataInputStream in;
+    private DataOutputStream out;
     private FrameCliente frame;
     
     public DataOutputStream getSalida(){
@@ -25,7 +25,7 @@ public class Cliente {
     this.frame= frame;
     }
 
-    public static void iniciarCliente() {
+    public void iniciarCliente() {
 
         try {
             int serverPort = 7896;
@@ -49,10 +49,16 @@ public class Cliente {
             System.out.println("Socket:" + e.getMessage());
         } catch (IOException e) {
             System.out.println("readline:" + e.getMessage());
-        } 
+        }
+    }
+    
+    private void procesarMensaje(String data){
+
+        //mirar como lo ha hecho vero en el servidor
     }
 
     public void enviarMensajeServidor(String mensaje) throws IOException {
         out.writeUTF(mensaje);
+        out.flush();
     }
 }
