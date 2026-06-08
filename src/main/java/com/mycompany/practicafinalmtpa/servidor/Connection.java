@@ -42,7 +42,7 @@ public class Connection
 
             while (true) {
                 String protocolo = in.readUTF();
-                enviarMensaje();
+                
 
                 ProcesadorMensajeServidor pm = new ProcesadorMensajeServidor();
                 pm.separarComando(protocolo, this);

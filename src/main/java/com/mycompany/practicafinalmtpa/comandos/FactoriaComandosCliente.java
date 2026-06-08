@@ -15,7 +15,7 @@ package com.mycompany.practicafinalmtpa.comandos;
 public class FactoriaComandosCliente implements FactoriaComando {
 
     @Override
-    public Comando gestionarComando(String tipo) {
+    public ComandoCliente gestionarComando(String tipo) {
         if (tipo.equals("OK")) {
             return new OK();
         }
