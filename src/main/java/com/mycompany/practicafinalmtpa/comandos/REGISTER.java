@@ -16,7 +16,7 @@ public class REGISTER implements Comando{
 
     @Override
     public void ejecutar(String[] parte, Connection c) {
-        String nombre =
+        String nombre = parte[1];
         
     }
 

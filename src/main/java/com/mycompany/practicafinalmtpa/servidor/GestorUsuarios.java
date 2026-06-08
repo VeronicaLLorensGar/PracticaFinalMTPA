@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 /**
  *
  * @author Veronica
@@ -16,6 +15,18 @@ import java.io.IOException;
 //va a haber que hacer algo con el tema de los gestores, o in singleton o algo pq todos tiene q  tener las mismas listas y manejarlas
 public class GestorUsuarios {
 
+    private static GestorUsuarios instancia;
+
+    private GestorUsuarios() {
+    }
+
+    public static GestorUsuarios getInstancia() {
+        if (instancia == null) {
+            instancia = new GestorUsuarios();
+        }
+
+        return instancia;
+    }
 
     private static final String fichero = "usuarios.txt";
 
@@ -39,7 +50,6 @@ public class GestorUsuarios {
         return false;
     }
 
-    
     public boolean validarCredenciales(String nombre, int contraseña) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {

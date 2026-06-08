@@ -4,6 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
+import com.mycompany.practicafinalmtpa.persistencia.Persistencia;
+
 
 
 /**
@@ -12,16 +14,29 @@ package com.mycompany.practicafinalmtpa.servidor;
  */
 public class GestionAcceso {
     
-    public GestorContraseña gc = new GestorContraseña();
-    public GestorUsuarios gu = new GestorUsuarios();
+    GestorContraseña gc 
+    GestorUsuarios gu
+        private static GestionAcceso instancia;
+
+    private GestionAcceso() {
+    }
+
+    public static GestionAcceso getInstancia() {
+        if (instancia == null) {
+            instancia = new GestionAcceso();
+        }
+
+        return instancia;
+    }
     
     public void iniciarRegistro(String nombre){
-        boolean existeNombre = gu.existeNombre(nombre);
+        boolean existeNombre = GestorUsuarios.getInstancia().existeNombre(nombre);
       
         if(!existeNombre){
             
             int password = gc.generarContraseña();
             Usuario u = new Usuario(nombre, password);
+            Persistencia.guardarUsuario(u);
             
         }else{
             //aqui mandar un error de que ese nombre ya existe
@@ -32,7 +47,7 @@ public class GestionAcceso {
     
 public String login(String nombre, int password) {
 
-        if (gu.validarCredenciales(nombre, password)) {
+        if (GestorUsuarios.getInstancia().validarCredenciales(nombre, password)) {
             return //comando ok
         }
 

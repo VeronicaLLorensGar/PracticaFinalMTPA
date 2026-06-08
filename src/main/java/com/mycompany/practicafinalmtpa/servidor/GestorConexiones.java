@@ -4,6 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Veronica
@@ -12,6 +14,7 @@ package com.mycompany.practicafinalmtpa.servidor;
 public class GestorConexiones {
     
     private static GestorConexiones instancia;
+    
     private ArrayList<Connection> conexiones;
 
     private GestorConexiones() {
@@ -37,15 +40,15 @@ public class GestorConexiones {
         return conexiones;
     }
 
-    public Connection buscarPorUsuario(String nombre) {
-        for (Connection c : conexiones) {
-            if (c.getUsuario() != null &&
-                c.getUsuario().getNombre().equals(nombre)) {
-                return c;
-            }
-        }
-        return null;
-    }
+//    public Connection buscarPorUsuario(String nombre) {
+//        for (Connection c : conexiones) {
+//            if (c.getUsuario() != null &&
+//                c.getUsuario().getNombre().equals(nombre)) {
+//                return c;
+//            }
+//        }
+//        return null;
+//    }
 }
 
     

@@ -24,8 +24,8 @@ public class Connection
     Socket clientSocket;
     EstadoServidor estado = EstadoServidor.getEstado();
 
-    private Usuario usuario;
-    private Salon salonActual;
+//    private Usuario usuario;
+//    private Salon salonActual;
 
     public Connection(Socket aClientSocket) {
         try {
@@ -68,21 +68,21 @@ public class Connection
         out.writeUTF("");//revisar cuando hagamos la clase de generar respuestas y el argumento con la respuesta a enviar
     }
 
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Salon getSalonActual() {
-        return salonActual;
-    }
-
-    public void setSalonActual(Salon salonActual) {
-        this.salonActual = salonActual;
-    }
+//
+//    public Usuario getUsuario() {
+//        return usuario;
+//    }
+//
+//    public void setUsuario(Usuario usuario) {
+//        this.usuario = usuario;
+//    }
+//
+//    public Salon getSalonActual() {
+//        return salonActual;
+//    }
+//
+//    public void setSalonActual(Salon salonActual) {
+//        this.salonActual = salonActual;
+//    }
 
 }

@@ -27,7 +27,7 @@ public class Persistencia {
     private static final String fichero_deportes = "salonDeportes.txt";
     private static final String fichero_uemc = "salonUEMC.txt";
 
-    public void guardarUsuario(Usuario u) {
+    public static void guardarUsuario(Usuario u) {
 
         try (FileWriter fw = new FileWriter(fichero_usuarios, true); BufferedWriter bw = new BufferedWriter(fw)) {
 
@@ -39,7 +39,7 @@ public class Persistencia {
         }
     }
 
-    public void guardarMensajes(Mensaje m, String salon) {
+    public static void guardarMensajes(Mensaje m, String salon) {
 
         String fichero = obtenerFicheroSalon(salon);
 
@@ -54,7 +54,7 @@ public class Persistencia {
         }
     }
 
-    public ArrayList<Mensaje> cargarMensajesDia(String salon) {
+    public static ArrayList<Mensaje> cargarMensajesDia(String salon) {
 
         ArrayList<Mensaje> lista = new ArrayList<>();
         String fichero = obtenerFicheroSalon(salon);
@@ -90,7 +90,7 @@ public class Persistencia {
         return lista;
     }
 
-    public ArrayList<Mensaje> cargarMensajesAnteriores(String salon) {
+    public static ArrayList<Mensaje> cargarMensajesAnteriores(String salon) {
 
         ArrayList<Mensaje> lista = new ArrayList<>();
         String fichero = obtenerFicheroSalon(salon);
@@ -126,7 +126,7 @@ public class Persistencia {
         return lista;
     }
 
-    private String obtenerFicheroSalon(String salon) {
+    private static String obtenerFicheroSalon(String salon) {
 
         if (salon.equalsIgnoreCase("IA")) {
             return fichero_ia;
