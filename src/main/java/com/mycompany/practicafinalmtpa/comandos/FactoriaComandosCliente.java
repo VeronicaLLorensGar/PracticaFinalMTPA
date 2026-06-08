@@ -4,28 +4,25 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
-
-
 /**
  *
  * @author Veronica
  */
 //gestiona lso comandos que llegan al cliente
+public class FactoriaComandosCliente {
 
-public class FactoriaComandosCliente implements FactoriaComando {
-
-    @Override
     public ComandoCliente gestionarComando(String tipo) {
+
         if (tipo.equals("OK")) {
             return new OK();
         }
         if (tipo.equals("KEY")) {
             return new KEY();
         }
-        if (tipo.equals("ERROR")) {//hay q  cambiar el protocolo pq esto si no no se puede hacer bien, y lo de las notificaciones igual
+        if (tipo.startsWith("ERROR")) {
             return new ERROR();
         }
-        if (tipo.equals("NOTIFY")) {
+        if (tipo.startsWith("NOTIFY")) {
             return new NOTIFY();
         }
         if (tipo.equals("ROOMS")) {
@@ -35,18 +32,15 @@ public class FactoriaComandosCliente implements FactoriaComando {
             return new USERS();
         }
         if (tipo.equals("FRIENDS")) {
-            return new OK();
+            return new FRIENDS();
         }
-        //igual este le quitamos
         if (tipo.equals("SEND_MESSAGE")) {
             return new SEND_MESSAGE();
         }
-        //igual le quitamos
         if (tipo.equals("PRIVATE_SEND_MESSAGE")) {
             return new PRIVATE_SEND_MESSAGE();
         }
-        if (tipo.equals("SEND_FRIEND_REQUEST")) {
-            return new SEND_FRIEND_REQUEST();
-        }
 
+        return new ERROR();
     }
+}

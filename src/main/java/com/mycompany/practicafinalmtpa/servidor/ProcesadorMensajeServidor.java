@@ -18,7 +18,7 @@ public class ProcesadorMensajeServidor {
     
 
         FactoriaComando fc = new FactoriaComandosServidor();
-        Comando com = fc.gestionarComando(comando);
+        ComandoServidor com = fc.gestionarComando(comando);
 
         com.ejecutar(parte, c);
 

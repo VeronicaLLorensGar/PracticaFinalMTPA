@@ -4,18 +4,15 @@
  */
 package com.mycompany.practicafinalmtpa.comandos;
 
-
-
-
 /**
  *
  * @author Veronica
  */
-//gestiona los comandos que llegan al servidor
-public class FactoriaComandosServidor implements FactoriaComando {
+public class FactoriaComandosServidor {
 
     public ComandoServidor gestionarComando(String tipo) {
-        if (tipo.equalsIgnoreCase("REGISTER")) {
+
+        if (tipo.equals("REGISTER")) {
             return new REGISTER();
         }
         if (tipo.equals("LOGIN")) {
@@ -25,7 +22,7 @@ public class FactoriaComandosServidor implements FactoriaComando {
             return new LOGOUT();
         }
         if (tipo.equals("HEARTBEAT")) {
-            return new HEATBEAT();
+            return new HEARTBEAT();
         }
         if (tipo.equals("LIST_ROOMS")) {
             return new LIST_ROOMS();
@@ -36,25 +33,16 @@ public class FactoriaComandosServidor implements FactoriaComando {
         if (tipo.equals("LIST_FRIENDS")) {
             return new LIST_FRIENDS();
         }
-         if (tipo.equals("JOIN")) {
+        if (tipo.equals("JOIN")) {
             return new JOIN();
         }
         if (tipo.equals("MESSAGE")) {
             return new MESSAGE();
         }
-        if (tipo.equals("PRIVATE_MESSAGE"))  //igual wquitar en el protocolo el username
-        {
+        if (tipo.equals("PRIVATE_MESSAGE")) {
             return new PRIVATE_MESSAGE();
         }
-        if (tipo.equals("ACCEPT_FRIEND_REQUEST")) {
-            return new ACCEPT_FRIEND_REQUEST();
-        }
-         if (tipo.equals("DENY_FRIEND_REQUEST")) {
-            return new DENY_FRIEND_REQUEST();
-        }
-  
-    return ERROR; //aqui algo de error;
 
-}
-
+        return new ERROR //esto habra q gestionarlo igual con exceptions o algo asi
+    }
 }
