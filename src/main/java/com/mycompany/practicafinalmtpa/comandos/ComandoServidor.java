@@ -9,8 +9,8 @@ import com.mycompany.practicafinalmtpa.servidor.Connection;
  *
  * @author Veronica
  */
-//igual convertir esto en una clase abstraca y meter todos los gestores nose
-public interface Comando {
+//para los mensajes que le llegan al servidor( los tiene que porcesar po eso necesita connection)
+public interface ComandoServidor {
     public void ejecutar(String[] parte, Connection c);
     
 }

@@ -10,7 +10,7 @@ package com.mycompany.practicafinalmtpa.comandos;
  *
  * @author Veronica
  */
-public class LOGOUT implements Comando{
+public class LOGOUT implements ComandoServidor{
 
     
 }

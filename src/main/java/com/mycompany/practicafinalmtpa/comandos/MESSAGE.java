@@ -11,7 +11,7 @@ import com.mycompany.practicafinalmtpa.servidor.Connection;
  *
  * @author Veronica
  */
-public class MESSAGE implements Comando {
+public class MESSAGE implements ComandoServidor {
 
     public void ejecutar(String[] parte, Connection c) {
 

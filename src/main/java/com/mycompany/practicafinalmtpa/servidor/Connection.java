@@ -4,7 +4,6 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-
 import com.mycompany.practicafinalmtpa.salones.Salon;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -24,9 +23,8 @@ public class Connection
     Socket clientSocket;
     EstadoServidor estado = EstadoServidor.getEstado();
 
-//    private Usuario usuario;
+    private Usuario usuario;
 //    private Salon salonActual;
-
     public Connection(Socket aClientSocket) {
         try {
             clientSocket = aClientSocket;
@@ -64,18 +62,22 @@ public class Connection
 
     }
 
-    public void enviarMensaje() throws IOException {
-        out.writeUTF("");//revisar cuando hagamos la clase de generar respuestas y el argumento con la respuesta a enviar
+    public void enviarMensaje(String mensaje) {
+        try {
+            out.writeUTF(mensaje);
+        } catch (IOException e) {
+            //error
+        }
     }
 
-//
-//    public Usuario getUsuario() {
-//        return usuario;
-//    }
-//
-//    public void setUsuario(Usuario usuario) {
-//        this.usuario = usuario;
-//    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 //
 //    public Salon getSalonActual() {
 //        return salonActual;
@@ -84,5 +86,4 @@ public class Connection
 //    public void setSalonActual(Salon salonActual) {
 //        this.salonActual = salonActual;
 //    }
-
 }

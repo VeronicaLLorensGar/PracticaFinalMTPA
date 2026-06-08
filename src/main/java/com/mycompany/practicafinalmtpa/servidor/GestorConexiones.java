@@ -10,11 +10,10 @@ import java.util.ArrayList;
  *
  * @author Veronica
  */
-//este tampoco se si meterle en gestion sistema o no
+
 public class GestorConexiones {
     
     private static GestorConexiones instancia;
-    
     private ArrayList<Connection> conexiones;
 
     private GestorConexiones() {

@@ -14,8 +14,8 @@ import com.mycompany.practicafinalmtpa.persistencia.Persistencia;
  */
 public class GestionAcceso {
     
-    GestorContraseña gc 
-    GestorUsuarios gu
+    GestorContraseña gc = GestorContraseña.getInstancia();
+    GestorUsuarios gu = GestorUsuarios.getInstancia();
         private static GestionAcceso instancia;
 
     private GestionAcceso() {

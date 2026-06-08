@@ -16,6 +16,18 @@ import java.util.Random;
 public class GestorContraseña {
 
     private static final String fichero = "usuarios.txt";
+    
+    private static GestorContraseña instancia;
+
+    private GestorContraseña() {
+    }
+    public static GestorContraseña getInstancia() {
+        if (instancia == null) {
+            instancia = new GestorContraseña();
+        }
+
+        return instancia;
+    }
 
     public int generarContraseña() {
         int password= 0;

@@ -7,6 +7,7 @@ package com.mycompany.practicafinalmtpa.cliente;
 import com.mycompany.practicafinalmtpa.comandos.Comando;
 import com.mycompany.practicafinalmtpa.comandos.FactoriaComando;
 import com.mycompany.practicafinalmtpa.comandos.FactoriaComandosCliente;
+import com.mycompany.practicafinalmtpa.servidor.Connection;
 
 /**
  *
@@ -21,9 +22,9 @@ public class ProcesadorMensajeCliente {
     
 
         FactoriaComando fc = new FactoriaComandosCliente();
-        Comando c = fc.gestionarComando(comando);
+        Comando com = fc.gestionarComando(comando);
 
-        c.ejecutar(parte);
+        com.ejecutar(parte);
 
     }
     

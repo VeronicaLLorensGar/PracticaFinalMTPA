@@ -10,7 +10,7 @@ import com.mycompany.practicafinalmtpa.servidor.Connection;
  *
  * @author Veronica
  */
-public class PRIVATE_MESSAGE implements Comando {
+public class PRIVATE_MESSAGE implements ComandoServidor{
 
 
         

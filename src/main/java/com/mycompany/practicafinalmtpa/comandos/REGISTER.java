@@ -5,22 +5,27 @@
 package com.mycompany.practicafinalmtpa.comandos;
 
 import com.mycompany.practicafinalmtpa.servidor.Connection;
-
-
+import com.mycompany.practicafinalmtpa.servidor.GestionAcceso;
 
 /**
  *
  * @author Veronica
  */
-public class REGISTER implements Comando{
+public class REGISTER implements ComandoServidor {
 
     @Override
     public void ejecutar(String[] parte, Connection c) {
+
+        if (parte.length < 2) {
+           //error
+        }
+
         String nombre = parte[1];
+
+        GestionAcceso ga = GestionAcceso.getInstancia();
+
+        ga.iniciarRegistro(nombre);
         
     }
 
-
-  
-    
 }

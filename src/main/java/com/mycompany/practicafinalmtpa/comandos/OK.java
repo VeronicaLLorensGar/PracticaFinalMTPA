@@ -10,7 +10,7 @@ package com.mycompany.practicafinalmtpa.comandos;
  *
  * @author Veronica
  */
-public class OK implements Comando{
+public class OK implements ComandoCliente{
 
     
 }
