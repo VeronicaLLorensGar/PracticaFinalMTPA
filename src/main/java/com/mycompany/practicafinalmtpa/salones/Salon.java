@@ -4,52 +4,39 @@
  */
 package com.mycompany.practicafinalmtpa.salones;
 
-import com.mycompany.practicafinalmtpa.servidor.Usuario;
+import com.mycompany.practicafinalmtpa.servidor.Connection;
 import java.util.ArrayList;
 
 /**
  *
  * @author Veronica
  */
-public abstract class Salon {
 
-    public String nombre;
-    public ArrayList<Usuario> listaUsuario = new ArrayList<>();
-    public int numMensajes=0;
 
-    public ArrayList<Usuario> getListaUsuario() {
-        return listaUsuario;
+    public class Salon {
+
+        protected String nombre;
+        protected ArrayList<Connection> conexiones = new ArrayList<>();
+        protected int numMensajes = 0;
+
+        public void añadirConexion(Connection c) {
+            conexiones.add(c);
+        }
+
+        public void eliminarConexion(Connection c) {
+            conexiones.remove(c);
+        }
+
+        public ArrayList<Connection> getConexiones() {
+            return conexiones;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void incrementarMensajes() {
+            numMensajes++;
+        }
     }
 
-    public int getNumMensajes() {
-        return numMensajes;
-    }
-
-    public int getClientesConectados() {
-        return listaUsuario.size();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void añadiraSalon(Usuario user) {
-        listaUsuario.add(user);
-
-    }
-
-    public int getMensajes() {
-        return numMensajes;
-    }
-
-    public void incrementarMensajes() {
-        numMensajes++;
-
-    }
-
-    public void registrarDesconexionSalon(Usuario user) {
-
-        listaUsuario.remove(user);
-
-    }
-}

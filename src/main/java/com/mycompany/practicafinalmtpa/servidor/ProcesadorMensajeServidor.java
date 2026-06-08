@@ -4,8 +4,7 @@
  */
 package com.mycompany.practicafinalmtpa.servidor;
 
-import com.mycompany.practicafinalmtpa.comandos.Comando;
-import com.mycompany.practicafinalmtpa.comandos.FactoriaComando;
+import com.mycompany.practicafinalmtpa.comandos.ComandoServidor;
 import com.mycompany.practicafinalmtpa.comandos.FactoriaComandosServidor;
 
 public class ProcesadorMensajeServidor {
@@ -17,7 +16,7 @@ public class ProcesadorMensajeServidor {
 
     
 
-        FactoriaComando fc = new FactoriaComandosServidor();
+        FactoriaComandosServidor fc = new FactoriaComandosServidor();
         ComandoServidor com = fc.gestionarComando(comando);
 
         com.ejecutar(parte, c);
