@@ -1,5 +1,6 @@
-package com.mycompany.practicafinalmtpa;
+package com.mycompany.practicafinalmtpa.cliente;
 
+import com.mycompany.practicafinalmtpa.cliente.FrameCliente;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
