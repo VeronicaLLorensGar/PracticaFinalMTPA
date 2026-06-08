@@ -14,7 +14,7 @@ package com.mycompany.practicafinalmtpa.comandos;
 //gestiona los comandos que llegan al servidor
 public class FactoriaComandosServidor implements FactoriaComando {
 
-    public Comando gestionarComando(String tipo) {
+    public ComandoServidor gestionarComando(String tipo) {
         if (tipo.equalsIgnoreCase("REGISTER")) {
             return new REGISTER();
         }
