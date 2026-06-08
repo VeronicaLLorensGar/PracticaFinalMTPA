@@ -60,6 +60,7 @@ public class FrameCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panelContenedor.setPreferredSize(new java.awt.Dimension(750, 500));
         panelContenedor.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

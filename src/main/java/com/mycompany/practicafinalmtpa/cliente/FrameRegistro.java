@@ -4,6 +4,8 @@
  */
 package com.mycompany.practicafinalmtpa.cliente;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author david
@@ -15,6 +17,11 @@ public class FrameRegistro extends javax.swing.JFrame {
      */
     public FrameRegistro() {
         initComponents();
+        VolverAInicioSesion.addActionListener(e->{
+            new FrameInicioSesion().setVisible(true);
+            this.dispose();
+        }); 
+        VolverAInicioSesion.addActionListener(evt-> VolverAInicioSesionActionPerformed(evt));
     }
 
     /**
@@ -26,21 +33,127 @@ public class FrameRegistro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Usuario = new javax.swing.JTextField();
+        Contraseña = new javax.swing.JPasswordField();
+        ConfirmarContraseña = new javax.swing.JPasswordField();
+        CrearCuenta = new javax.swing.JButton();
+        VolverAInicioSesion = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+
+        Usuario.setText("Usuario");
+        Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuarioActionPerformed(evt);
+            }
+        });
+
+        Contraseña.setText("Contraseña");
+        Contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContraseñaActionPerformed(evt);
+            }
+        });
+
+        ConfirmarContraseña.setText("ConfirmarContraseña");
+        ConfirmarContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarContraseñaActionPerformed(evt);
+            }
+        });
+
+        CrearCuenta.setText("CrearCuenta");
+        CrearCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearCuentaActionPerformed(evt);
+            }
+        });
+
+        VolverAInicioSesion.setText("Volver a inicio de sesion");
+        VolverAInicioSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverAInicioSesionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ConfirmarContraseña, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(Contraseña, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                            .addComponent(Usuario, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(CrearCuenta))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(VolverAInicioSesion)))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(ConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(CrearCuenta)
+                .addGap(18, 18, 18)
+                .addComponent(VolverAInicioSesion)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsuarioActionPerformed
+
+    private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContraseñaActionPerformed
+
+    private void ConfirmarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConfirmarContraseñaActionPerformed
+
+    private void CrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearCuentaActionPerformed
+
+        String usuario= Usuario.getText();
+        String pass= new String(Contraseña.getPassword());
+        String confirmar= new String(ConfirmarContraseña.getPassword());
+        if(usuario.isEmpty() || pass.isEmpty() || confirmar.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Rellena todos los campos");
+            return ;       
+        }
+        if(!pass.equals(confirmar)){
+            JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden");
+            return;
+        }
+        
+        //Registro del servidor
+        JOptionPane.showMessageDialog(this,"Cuenta creada exitosamente");
+        new FrameInicioSesion().setVisible(true);
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_CrearCuentaActionPerformed
+
+    private void VolverAInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverAInicioSesionActionPerformed
+        new FrameInicioSesion().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_VolverAInicioSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +191,10 @@ public class FrameRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField ConfirmarContraseña;
+    private javax.swing.JPasswordField Contraseña;
+    private javax.swing.JButton CrearCuenta;
+    private javax.swing.JTextField Usuario;
+    private javax.swing.JButton VolverAInicioSesion;
     // End of variables declaration//GEN-END:variables
 }
