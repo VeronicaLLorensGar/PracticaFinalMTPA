@@ -1,5 +1,6 @@
-package com.mycompany.practicafinalmtpa;
+package com.mycompany.practicafinalmtpa.cliente;
 
+import com.mycompany.practicafinalmtpa.cliente.Cliente;
 import java.awt.CardLayout;
 
 public class FrameCliente extends javax.swing.JFrame {
@@ -58,7 +59,6 @@ public class FrameCliente extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(750, 500));
 
         panelContenedor.setLayout(new java.awt.CardLayout());
 

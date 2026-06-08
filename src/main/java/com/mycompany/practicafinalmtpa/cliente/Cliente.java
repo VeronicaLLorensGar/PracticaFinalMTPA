@@ -13,8 +13,17 @@ public class Cliente extends Thread {
     private DataInputStream in;
     private DataOutputStream out;
     private boolean conectado;
+    private FrameCliente frame;
+    
+    public Cliente(FrameCliente frame)
+    {
+    this.frame=frame;
+    }
+    public DataOutputStream getSalida(){
+    return out;
+    }
 
-    public void inciarCliente() {
+    public void iniciarCliente() {
 
         try {
             int serverPort = 7896;
