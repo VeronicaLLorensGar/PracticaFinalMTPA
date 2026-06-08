@@ -1,0 +1,4 @@
+Hito 3:
+Hemos echo hasta donde ha llegado nuestra concepción, hay cosas que no están bien hiladas y sin implementar, pero no sabemos como seguir y ya no entendemos bien como estructurar el trabajo y como hilarlo. La persistencia la hemos cogido entre EDA y una ia generativa. La base de connection, cliente y servidor la cogimos del ejemplo de socktes tcp de Lorena, y a partir de ahí seguimos. No sé si te valdrá hasta donde hemos llegado, pero es lo que tenemos. 
+Si dudas de si algo lo hemos echo nosotros puedes ver todos los cambios en git.
+Hemos echo los test pero no tiene mucho sentido si el trabajo esta sin acabar.
